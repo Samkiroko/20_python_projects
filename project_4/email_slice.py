@@ -9,12 +9,23 @@ def main():
 
     email_input = input("Input your email address: ")
 
-    (username, domain) = email_input.split("@")
-    (domain, extension) = domain.split(".")
+    if "@" in email_input and "." in email_input:
 
-    print(f"Username : {username} ")
-    print(f"Domain: {domain} ")
-    print(f"Extension: {extension} ")
+        if len(email_input.split("@")[1].split(".")) == 2:
+            (username, domain) = email_input.split("@")
+            (domain, extension) = domain.split(".")
+            extension_2 = ""
+
+        else:
+            (username, domain) = email_input.split("@")
+            (domain, extension, extension_2) = domain.split(".")
+
+        print(f"Username : {username} ")
+        print(f"Domain: {domain} ")
+        print(f"Extension: {extension} ")
+        print(f"Extension: {extension_2} ")
+    else:
+        print("Invalide email")
 
 
 main()

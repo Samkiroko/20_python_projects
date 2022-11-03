@@ -4,6 +4,8 @@ today_is = str(datetime.now()).split()[0].split("-")
 
 
 date_is = input("Enter DOB:(yyyy-mm-dd)>  ").split("-")
+print(date_is)
+
 
 if int(date_is[0]) < int(today_is[0]) and date_is[1] < "13" and date_is[2] <= "31":
     y = int(today_is[0]) - int(date_is[0])
